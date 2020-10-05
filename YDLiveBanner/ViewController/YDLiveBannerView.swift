@@ -17,11 +17,14 @@ public class YDLiveBannerView: UIView {
 	var bannerId: String?
 
 	// MARK: IBOutlets
+	@IBOutlet var contentView: UIView!
+
 	@IBOutlet weak var bannerImage: UIImageView!
 
 	// MARK: Init
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
+		instanceFromNib()
 	}
 
 	func prepareToInstance() {
@@ -31,6 +34,12 @@ public class YDLiveBannerView: UIView {
 			bannerImage?.removeGestureRecognizer(gesture)
 			tapOnBannerGesture = nil
 		}
+	}
+
+	// MARK: Private
+	private func instanceFromNib() {
+		contentView = loadNib()
+		addSubview(contentView)
 	}
 
 	// MARK: Actions

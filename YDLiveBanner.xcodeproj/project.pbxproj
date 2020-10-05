@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		01E037FAB443A21F47272DA4 /* Pods_YDLiveBanner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757AC4C2FA9235B6ED758F61 /* Pods_YDLiveBanner.framework */; };
+		C11D4234252BAA7800C80295 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D4233252BAA7800C80295 /* UIViewExtension.swift */; };
 		C19343C22527A37F00126D17 /* YDLiveBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = C19343C02527A37F00126D17 /* YDLiveBanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C19343CE2527A41000126D17 /* YDLiveBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19343C92527A41000126D17 /* YDLiveBannerView.swift */; };
 		C19343CF2527A41000126D17 /* YDLiveBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19343CB2527A41000126D17 /* YDLiveBannerView.xib */; };
@@ -18,6 +19,7 @@
 /* Begin PBXFileReference section */
 		5964139E445828C357104FC6 /* Pods-YDLiveBanner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLiveBanner.release.xcconfig"; path = "Target Support Files/Pods-YDLiveBanner/Pods-YDLiveBanner.release.xcconfig"; sourceTree = "<group>"; };
 		757AC4C2FA9235B6ED758F61 /* Pods_YDLiveBanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YDLiveBanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C11D4233252BAA7800C80295 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		C19343BD2527A37F00126D17 /* YDLiveBanner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YDLiveBanner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C19343C02527A37F00126D17 /* YDLiveBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLiveBanner.h; sourceTree = "<group>"; };
 		C19343C12527A37F00126D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +51,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		C11D4231252BAA6900C80295 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C11D4232252BAA6E00C80295 /* UIKit */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		C11D4232252BAA6E00C80295 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				C11D4233252BAA7800C80295 /* UIViewExtension.swift */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
 		C19343B32527A37F00126D17 = {
 			isa = PBXGroup;
 			children = (
@@ -71,6 +89,7 @@
 		C19343BF2527A37F00126D17 /* YDLiveBanner */ = {
 			isa = PBXGroup;
 			children = (
+				C11D4231252BAA6900C80295 /* Extensions */,
 				C19343CC2527A41000126D17 /* Model */,
 				C19343CA2527A41000126D17 /* View */,
 				C19343C82527A41000126D17 /* ViewController */,
@@ -219,6 +238,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C11D4234252BAA7800C80295 /* UIViewExtension.swift in Sources */,
 				C19343D02527A41000126D17 /* YDLiveBannerConfig.swift in Sources */,
 				C19343CE2527A41000126D17 /* YDLiveBannerView.swift in Sources */,
 			);
