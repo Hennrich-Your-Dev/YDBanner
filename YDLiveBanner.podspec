@@ -9,7 +9,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "YDLiveBanner"
-  spec.version      = "1.0.1"
+  spec.version      = "1.0.2"
   spec.summary      = "Product for B2W."
   spec.homepage     = "https://yourdev.com.br"
   spec.license      = "MIT"
@@ -20,6 +20,6 @@ Pod::Spec.new do |spec|
   spec.source_files     = "YDLiveBanner/**/*.{h,m,swift,xib}"
   spec.swift_version    = "5.0"
 
-	spec.dependency				"Kingfisher", "~> 5.0"
-
+  spec.dependency				"Kingfisher", "~> 5.0"
+  spec.dependency				"KingfisherWebP"
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import Kingfisher
+import KingfisherWebP
 
 public class YDLiveBannerView: UIView {
 
@@ -46,7 +47,14 @@ public class YDLiveBannerView: UIView {
 	public func config(with config: YDLiveBannerConfig, onBannerTap: @escaping ((_ bannerId: String) -> Void)) {
 		prepareToInstance()
 
-		bannerImage.kf.setImage(with: URL(string: config.image))
+		bannerImage.kf.setImage(with: URL(string: config.image), options: [.processor(WebPProcessor.default)], completionHandler: { result in
+			switch result {
+			case .failure(let error):
+				print(error.localizedDescription)
+
+			case .success: break
+			}
+		})
 
 		callback = onBannerTap
 
