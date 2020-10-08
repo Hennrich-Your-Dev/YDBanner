@@ -11,7 +11,6 @@
 		C11D4234252BAA7800C80295 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11D4233252BAA7800C80295 /* UIViewExtension.swift */; };
 		C19343C22527A37F00126D17 /* YDLiveBanner.h in Headers */ = {isa = PBXBuildFile; fileRef = C19343C02527A37F00126D17 /* YDLiveBanner.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C19343CE2527A41000126D17 /* YDLiveBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19343C92527A41000126D17 /* YDLiveBannerView.swift */; };
-		C19343CF2527A41000126D17 /* YDLiveBannerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C19343CB2527A41000126D17 /* YDLiveBannerView.xib */; };
 		C19343D02527A41000126D17 /* YDLiveBannerConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C19343CD2527A41000126D17 /* YDLiveBannerConfig.swift */; };
 		C19343D22527A5A000126D17 /* YDLiveBanner.podspec in Resources */ = {isa = PBXBuildFile; fileRef = C19343D12527A5A000126D17 /* YDLiveBanner.podspec */; };
 /* End PBXBuildFile section */
@@ -24,7 +23,6 @@
 		C19343C02527A37F00126D17 /* YDLiveBanner.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YDLiveBanner.h; sourceTree = "<group>"; };
 		C19343C12527A37F00126D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C19343C92527A41000126D17 /* YDLiveBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDLiveBannerView.swift; sourceTree = "<group>"; };
-		C19343CB2527A41000126D17 /* YDLiveBannerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YDLiveBannerView.xib; sourceTree = "<group>"; };
 		C19343CD2527A41000126D17 /* YDLiveBannerConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YDLiveBannerConfig.swift; sourceTree = "<group>"; };
 		C19343D12527A5A000126D17 /* YDLiveBanner.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = YDLiveBanner.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		E0D4BB00193B34EA55B89D68 /* Pods-YDLiveBanner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YDLiveBanner.debug.xcconfig"; path = "Target Support Files/Pods-YDLiveBanner/Pods-YDLiveBanner.debug.xcconfig"; sourceTree = "<group>"; };
@@ -91,7 +89,6 @@
 			children = (
 				C11D4231252BAA6900C80295 /* Extensions */,
 				C19343CC2527A41000126D17 /* Model */,
-				C19343CA2527A41000126D17 /* View */,
 				C19343C82527A41000126D17 /* ViewController */,
 				C19343C02527A37F00126D17 /* YDLiveBanner.h */,
 				C19343C12527A37F00126D17 /* Info.plist */,
@@ -105,14 +102,6 @@
 				C19343C92527A41000126D17 /* YDLiveBannerView.swift */,
 			);
 			path = ViewController;
-			sourceTree = "<group>";
-		};
-		C19343CA2527A41000126D17 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				C19343CB2527A41000126D17 /* YDLiveBannerView.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		C19343CC2527A41000126D17 /* Model */ = {
@@ -201,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C19343CF2527A41000126D17 /* YDLiveBannerView.xib in Resources */,
 				C19343D22527A5A000126D17 /* YDLiveBanner.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

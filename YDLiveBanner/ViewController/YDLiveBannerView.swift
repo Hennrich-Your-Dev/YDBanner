@@ -10,71 +10,49 @@ import UIKit
 import Kingfisher
 import KingfisherWebP
 
-public class YDLiveBannerView: UIView {
-
-	// MARK: Properties
-	var callback: ((_ bannerId: String) -> Void)?
-	var tapOnBannerGesture: UIGestureRecognizer?
-	var bannerId: String?
-
-	// MARK: IBOutlets
-	@IBOutlet var contentView: UIView!
-
-	@IBOutlet weak var bannerImage: UIImageView!
+public class YDLiveBannerView: UIImageView {
 
 	// MARK: Init
 	public required init?(coder: NSCoder) {
 		super.init(coder: coder)
-		instanceFromNib()
-	}
-
-	func prepareToInstance() {
-		callback = nil
-
-		if let gesture = tapOnBannerGesture {
-			bannerImage?.removeGestureRecognizer(gesture)
-			tapOnBannerGesture = nil
-		}
-	}
-
-	// MARK: Private
-	private func instanceFromNib() {
-		contentView = loadNib()
-		addSubview(contentView)
 	}
 
 	// MARK: Actions
-	public func config(with config: YDLiveBannerConfig, onBannerTap: @escaping ((_ bannerId: String) -> Void)) {
-		prepareToInstance()
+	public func config(with config: YDLiveBannerConfig, onComplete: @escaping () -> Void) {
+		guard let superview = superview else { return }
 
-		bannerImage.kf.setImage(with: URL(string: config.image), options: [.processor(WebPProcessor.default)], completionHandler: { result in
-			switch result {
-			case .failure(let error):
-				print(error.localizedDescription)
+		kf.setImage(
+			with: URL(string: config.image),
+			options: [.processor(WebPProcessor.default)],
+			completionHandler: { [weak self] result in
+				if case .success(let imageSuccess) = result {
+					let ratio = imageSuccess.image.size.width / imageSuccess.image.size.height
 
-			case .success: break
+					if superview.frame.width > superview.frame.height {
+						let newHeight = superview.frame.width / ratio
+						self?.frame.size = CGSize(width: superview.frame.width, height: newHeight)
+
+					} else{
+						let newWidth = superview.frame.height * ratio
+						self?.frame.size = CGSize(width: newWidth, height: superview.frame.height)
+					}
+				}
+
+				self?.changeConstraints()
 			}
-		})
-
-		callback = onBannerTap
-
-		bannerId = config.bannerId
-
-		tapOnBannerGesture = UITapGestureRecognizer(
-			target: self,
-			action: #selector(onBannerTapAction)
 		)
-
-		if let gesture = tapOnBannerGesture {
-			bannerImage.addGestureRecognizer(gesture)
-		}
 	}
 
-	@objc func onBannerTapAction() {
-		guard let bannerId = bannerId else {
+	func changeConstraints() {
+		guard let superview = superview else {
 			return
 		}
 
-		callback?(bannerId)
+		print(frame)
+		NSLayoutConstraint.activate([
+			superview.topAnchor.constraint(equalTo: topAnchor),
+			superview.heightAnchor.constraint(equalToConstant: self.frame.height)
+		])
 	}
 }
+
