@@ -17,8 +17,12 @@ public class YDLiveBannerView: UIImageView {
 		super.init(coder: coder)
 	}
 
+	public override func layoutSubviews() {
+		super.layoutSubviews()
+	}
+
 	// MARK: Actions
-	public func config(with config: YDLiveBannerConfig, onComplete: @escaping () -> Void) {
+	public func config(with config: YDLiveBannerConfig) {
 		guard let superview = superview else { return }
 
 		kf.setImage(
